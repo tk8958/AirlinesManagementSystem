@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flights</title>
+  <link rel="stylesheet" href="/CSS Code/flights.css">
+  <link rel="stylesheet" href="/CSS Code/styles.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <div class="logo">
+      <h1>Blossom Airlines <i class="fa-solid fa-plane-departure"></i></h1>
+    </div>
+    <nav>
+      <ul id="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="flights.html" target="_parent">Flights</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#destinations">Destinations</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="about.html" target="_parent">About</a></li>
+        <li><a href="login.html" target="_parent"><input type="button" value="Log in" class="head-buttons"></a></li>
+        <li><a href="register.html" target="_parent"><input type="button" value="Register" class="head-buttons"></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+  <!-- main section -->
+  <main class="full-div "></main>
+  <section id="home" class="hero" style="height: 1300px;">
+    <div class="hero-text">
+      <h2>Fly Smart, Book Fast</h2>
+      <p>With just a few clicks, you'll be ready to take off - anywhere, anytime.</p>
+    </div>
+  </section>
+
+
+  <section class="search-section">
+    <h2>Search for Flights</h2>
+    <form id="flightSearchForm">
+      <label for="fromCity">From:</label>
+      <input type="text" id="fromCity" placeholder="Enter departure city" required>
+      <label for="toCity">To:</label>
+      <input type="text" id="toCity" placeholder="Enter destination city" required>
+      <label for="departureDate">Departure Date:</label>
+      <input type="date" id="departureDate" min="" required>
+      <label for="aeroplaneClass">Class:</label>
+      <select type="aeroplaneClass" id="aeroplaneClass" min="" required style="width: 100%; padding: 10px;margin: 5px 0;border: none;border-radius: 5px;background: rgba(255, 255, 255, 0.7);">
+        <option value="economy">Economy Class</option>
+        <option value="firstClass">First Class</option>
+        <option value="secondClass">Second Class</option>
+      </select>
+      <a href="#flightresult"><button type="submit">Search Flights</button></a>
+    </form>
+  </section>
+
+  <!-- available flights -->
+  <section class="flight-results" id="flightresult" style="color: white;">
+    <h2>Available Flights</h2>
+    <div id="flightList"></div>
+  </section>
+
+
+  <!-- booking section -->
+  <section class="booking-section" id="bookingsec" style="display: none;">
+    <h2>Booking Details</h2>
+    <form id="bookingForm">
+      <div class="form-columns">
+
+        <!-- Left Side: Passenger Details -->
+        <div class="form-left">
+          <label for="passengerName">Passenger Name:</label>
+          <input type="text" id="passengerName" placeholder="Enter passenger name" required>
+
+          <label for="passengerEmail">Email:</label>
+          <input type="email" id="passengerEmail" placeholder="Enter your email" required>
+
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+          <label for="gender">Gender:</label>
+          <select id="gender" required>
+            <option value="">Select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" required>
+
+          <label for="aadhaar">Upload Aadhaar Card:</label>
+          <input type="file" id="aadhaar" accept="image/*" required>
+        </div>
+
+        <!-- Right Side: Payment Details -->
+        <div class="form-right">
+          <h3>Payment Details</h3>
+
+          <label for="cardName">Cardholder Name:</label>
+          <input type="text" id="cardName" placeholder="Enter name on card" required>
+
+          <label for="cardNumber">Card Number:</label>
+          <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+
+          <label for="expiry">Expiry Date:</label>
+          <input type="month" id="expiry" required>
+
+          <label for="cvv">CVV:</label>
+          <input type="password" id="cvv" maxlength="4" required>
+
+          <p>OR Scan QR Code to Pay:</p>
+          <img src="/Pics/qr.jpg" alt="QR Code for Payment" class="qr-img">
+        </div>
+
+      </div>
+
+      <!-- Submit Button -->
+      <a href="#yourticket">
+        <button type="submit">Book Flight</button>
+      </a>
+    </form>
+  </section>
+
+
+
+
+
+
+  <section class="your-ticket1" id="yourticket">
+    <div class="main">
+      <div id="image">
+        <div id="offer-main">
+          <p id="airline-name">Blossom Airline</p>
+          <div>
+            <div id="offer">15% OFF</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; padding: 20px 0;">
+        <h2>FLIGHT BOOKED</h2>
+        <div id="flightNo">Flight No: 3358</div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; padding: 10px 0;">
+        <div style="text-align: left;">
+
+          <div id="from"><strong>KOL</strong></div>
+          <div style="font-size: 12px; color: #777;">06:25 AM</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 24px;">✈️</div>
+          <div style="font-size: 12px;">2h 10m<br>Non stop</div>
+        </div>
+        <div style="text-align: right;">
+          <div id="to"><strong>DEL</strong></div>
+          <div style="font-size: 12px; color: #777;">08:35 AM</div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div style="display: flex; justify-content: space-between; padding: 10px 0;">
+        <div><strong>Cabin Class:</strong><br>
+          <div id="aeroplaneClassPage">Economy</div>
+        </div>
+        <div><strong>Seat:</strong><br>23D (W)</div>
+      </div>
+
+      <hr>
+
+      <div style="display: flex; justify-content: space-between; padding: 10px 0;">
+        <div>
+          <strong>Traveler Details</strong><br>
+          <div id="name">Mr. Biswajit Ghosh</div>
+          <div id="email">biswajit@example.com</div>
+        </div>
+        <div>
+          <strong>Payment Summary</strong><br>
+          <div id="payment"><strong>Total: Rs. 7,911</strong></div>
+        </div>
+      </div>
+
+      <hr>
+      <div id="date1" style="text-align: center; font-size: 12px; color: #888;">
+        Note: This is a system-generated ticket. No signature required.
+      </div>
+    </div>
+  </section>
+
+
+
+  <script src="/JS Code/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cancel Flight - Blossom Airlines</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cancel-box {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      width: 330px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      text-align: center;
+    }
+
+    .cancel-box h2 {
+      margin-bottom: 20px;
+      color: #0b3d91;
+    }
+
+    .cancel-box input,
+    .cancel-box select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.3);
+      color: #000;
+      font-weight: bold;
+    }
+
+    .cancel-box button {
+      background-color: #0b3d91;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .cancel-box button:hover {
+      background-color: #051b41;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      color: black;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      z-index: 10;
+      text-align: center;
+    }
+
+    .popup h3 {
+      margin-bottom: 10px;
+      color: #0b3d91;
+    }
+
+    .popup button {
+      background-color: #0b3d91;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cancel-box" id="cancel-flight">
+    <h2>Cancel Flight</h2>
+    <form onsubmit="cancelFlight(event)">
+      <input type="text" id="passenger" placeholder="Passenger Name">
+      <input type="email" id="email" placeholder="Enter your Email">
+      <input type="text" id="flight" placeholder="Flight Number">
+      <input type="date" id="date">
+      <select id="reason">
+        <option value="">Select a reason</option>
+        <option value="Change of plans">Change of plans</option>
+        <option value="Medical emergency">Medical emergency</option>
+        <option value="Booking mistake">Booking mistake</option>
+        <option value="Other">Other</option>
+      </select>
+      <button type="submit">Cancel</button>
+    </form>
+  </div>
+
+  <!-- Pop-up -->
+  <div id="popup" class="popup">
+    <h3>Flight Cancelled!</h3>
+    <p id="popup-message"></p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+
+  <script>
+    function cancelFlight(event) {
+      event.preventDefault();
+
+      const passenger = document.getElementById("passenger").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const flight = document.getElementById("flight").value.trim();
+      const date = document.getElementById("date").value;
+      const reason = document.getElementById("reason").value;
+
+      if (!passenger || !email || !flight || !date || !reason) {
+        alert("Please fill out all the fields.");
+        return;
+      }
+
+      const msg = `Flight ${flight} for ${passenger} on ${date} has been cancelled.\nReason: ${reason}`;
+      document.getElementById("popup-message").innerText = msg;
+      document.getElementById("popup").style.display = "block";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>

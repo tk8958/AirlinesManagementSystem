@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blossom Airlines - Book Your flight with Us</title>
+  <link rel="stylesheet" href="/CSS Code/styles.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <div class="logo" onclick="toggleSidebar()">
+    <h1 >Blossom Airlines <i class="fa-solid fa-plane-departure"></i></h1>
+    </div>
+
+    <!-- sidebar -->
+    <div class="sidebar" id="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()" style="border: none">x</a>
+      <h3 id="sidebarheading">Blossom Airlines</h3>
+      <a href="Dashboard.html"><i class="fas fa-qrcode"></i> Dashboard</a>  
+        <a href="User.html"><i class="fas fa-user"></i> User Profile</a>
+        <a href="flights.html"><i class="fas fa-plane-departure"></i> Book Flight</a>
+        <a href="CancelBooking.html#cancel-flight"><i class="fas fa-times-circle"></i> Cancel Booking</a>
+        <a href="Support.html"><i class="fas fa-headset"></i> Support</a>
+        <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+
+    <!-- nav -->
+    <nav>
+      <ul id="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="flights.html">Flights</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="about.html" target="_parent">About</a></li>
+        <li><a href="login.html"><input type="button" value="Log in" class="head-buttons"></a></li>
+        <li><a href="register.html"><input type="button" value="Register" class="head-buttons"></a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  
+    <!-- Home Section -->
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <div  id="welcomeMessage"></div>
+        <h2>Welcome to Blossom Airlines</h2>
+        <p>Connecting the World with Comfort & Luxury</p>
+        <a href="#destinations" class="startbtn">Start Exploring</a>
+      </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations">
+      <h2>Popular Destinations</h2>
+      <div class="destination-list">
+        <div class="destination">
+          <img src="/Pics/des1.png" alt="Paris">
+          <h3>Paris</h3>
+          <p>The city of love and lights. Explore its stunning architecture and rich history.</p>
+        </div>
+        <div class="destination">
+          <img src="/Pics/des2.png" alt="Tokyo">
+          <h3>Tokyo</h3>
+          <p>Modern city with a perfect blend of tradition and innovation.</p>
+        </div>
+        <div class="destination">
+          <img src="/Pics/des3.png" alt="New York">
+          <h3>New York</h3>
+          <p>The city that never sleeps. Always something exciting happening here.</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+      <h2>Go beyond your imagination</h2>
+      <div class="image-gallery">
+        <div class="gallery-item">
+          <img src="/Pics/gal1.png" alt="Beach">
+        </div>
+        <div class="gallery-item">
+          <img src="/Pics/gal2.png" alt="Mountains">
+        </div>
+        <div class="gallery-item">
+          <img src="/Pics/gal3.png" alt="Forest">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  
+  <!-- cabin review section -->
+  <section class="review-section">
+    <h2>Cabin Experience Reviews</h2>
+    <p>Hear what our flyers have to say about our modern, comfortable, and peaceful cabins.</p>
+
+    <div class="review-container">
+      <div class="review-card">
+        <img src="/Pics/cabin1.jpg" alt="Cabin View 1" />
+        <div class="content">
+          <h3>Spacious and Clean</h3>
+          <p>The cabin was spotless and airy. The lighting and space made the whole trip very comfortable.</p>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <img src="/Pics/cabin2.jpg" alt="Cabin View 2" />
+        <div class="content">
+          <h3>Exceptional Comfort</h3>
+          <p>Seats were really comfortable with plenty of legroom. Felt well taken care of throughout the flight.</p>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <img src="/Pics/cabin3.jpg" alt="Cabin View 3" />
+        <div class="content">
+          <h3>Quiet and Relaxing</h3>
+          <p>The in-flight atmosphere was calming. Soft lighting and friendly crew made it a relaxing journey.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- customer reviews -->
+  <section class="customer-reviews">
+    <h2>What Our Customers Say</h2>
+    <div class="reviews-container">
+      <blockquote>"Amazing service and comfortable flights!" - Sarah W.</blockquote>
+      <blockquote>"Best travel experience ever!" - James L.</blockquote>
+      <blockquote>"Blossom makes booking flights so easy!" - Emily R.</blockquote>
+    </div>
+  </section>
+
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form action="#" method="post">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+
+  <!-- footer section -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Experience seamless travel booking with our airline. Comfort, convenience, and reliability in one
+          place.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Board of Directors</a></li>
+          <li><a href="#">Leadership Team</a></li>
+          <li><a href="#">Investor Relations</a></li>
+          <li><a href="#">Interglobe Enterprises</a></li>
+          <li><a href="#">Seat/Aircraft information</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email: blossomairlines@gmail.com</p>
+        <p>Phone: +91 8054672710</p>
+        <p>Address: Sky Tower, Level 25, Aviation Buisness Park, New Delhi, India - 110001</p>
+      </div>
+      <div class="footer-section">
+        <h3>Support</h3>
+        <div class="support">
+          <a href="#">Seat Select</a>
+          <a href="#">Charter Services</a>
+          <a href="#">Refund Claim</a>
+          <a href="#">Baggage</a>
+          <a href="#">Hotels</a>
+          <a href="#">FAQ's</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Blossom Airlines. All Rights Reserved.<br>Made with Love &hearts;</p>
+    </div>
+  </footer>
+  <script src="/JS Code/script.js"> </script>
+
+  <script>
+  window.addEventListener("DOMContentLoaded", () => {
+      const username = localStorage.getItem("username");
+      if (username) {
+          document.getElementById("welcomeMessage").innerText = "Welcome, " + username + "!";
+      } else {
+          document.getElementById("welcomeMessage").innerText = "Welcome, Guest!";
+      }
+  });
+</script>
+ 
+</body>
+
+</html>
